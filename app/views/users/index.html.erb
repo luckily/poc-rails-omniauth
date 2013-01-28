@@ -1,0 +1,7 @@
+<% if current_user %>
+  <li>Hi! &nbsp;<strong><%= current_user.email %></strong> &nbsp;|&nbsp;
+  <%= link_to "LOGOUT", logout_path %></li>
+<% else %>
+  <li><%= link_to "Facebook LOGIN", user_omniauth_authorize_path(:facebook) %></li>
+  <li><%= link_to "QQ LOGIN", user_omniauth_authorize_path(:tqq) %> </li>
+<% end %>
